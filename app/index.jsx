@@ -1,10 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import PieCircle from './components/PieCircle';
 
 class EchartsForReactExample extends React.Component {
   render() {
     return (
-      <div>Hello</div>
+      <div>
+        <PieCircle />
+      </div>
     );
   }
 }
