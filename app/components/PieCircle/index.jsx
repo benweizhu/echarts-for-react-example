@@ -6,52 +6,129 @@ import styles from './PieCircle.scss';
 const cx = classNames.bind(styles);
 
 class PieCircle extends React.Component {
-
   getOption = () => {
     return {
+      title: {
+        text: 'This is a mock up',
+        x: 'center',
+        textStyle: {
+          color: '#495562'
+        }
+      },
       tooltip: {
         trigger: 'item',
-        formatter: "{a} <br/>{b}: {c} ({d}%)"
-      },
-      legend: {
-        orient: 'vertical',
-        x: 'left',
-        data: ['直接访问', '邮件营销', '联盟广告', '视频广告', '搜索引擎']
+        formatter: "{b}: {d}% ({c})"
       },
       series: [
         {
           name: '访问来源',
           type: 'pie',
-          radius: ['50%', '70%'],
-          avoidLabelOverlap: false,
-          label: {
-            normal: {
-              show: false,
-              position: 'center'
+          radius: ['40%', '55%'],
+
+          data: [
+            {
+              value: 335, name: 'XiaoMi 34% 22,323',
+              itemStyle: {
+                normal: {
+                  color: '#C7E38F'
+                }
+              },
+              label: {
+                normal: {
+                  textStyle: {
+                    color: '#67717C',
+                    fontStyle: 'bolder'
+                  }
+                }
+              }
             },
-            emphasis: {
-              show: true,
-              textStyle: {
-                fontSize: '30',
-                fontWeight: 'bold'
+            {
+              value: 310, name: 'Samsung',
+              itemStyle: {
+                normal: {
+                  color: '#1C4C26'
+                }
+              },
+              label: {
+                normal: {
+                  textStyle: {
+                    color: '#67717C',
+                    fontStyle: 'bolder'
+                  }
+                }
+              }
+            },
+            {
+              value: 234, name: 'Vivo',
+              itemStyle: {
+                normal: {
+                  color: '#3A8449'
+                }
+              },
+              label: {
+                normal: {
+                  textStyle: {
+                    color: '#67717C',
+                    fontStyle: 'bolder'
+                  }
+                }
+              }
+            },
+            {
+              value: 135, name: 'Huawei',
+              itemStyle: {
+                normal: {
+                  color: '#E3FEC7'
+                }
+              },
+              label: {
+                normal: {
+                  textStyle: {
+                    color: '#67717C',
+                    fontStyle: 'bolder'
+                  }
+                }
+              }
+            },
+            {
+              value: 1048, name: 'Apple',
+              itemStyle: {
+                normal: {
+                  color: '#90E284'
+                }
+              },
+              label: {
+                normal: {
+                  textStyle: {
+                    color: '#67717C',
+                    fontStyle: 'bolder'
+                  }
+                }
+              }
+            },
+            {
+              value: 251, name: 'Other',
+              itemStyle: {
+                normal: {
+                  color: '#7DC873'
+                }
+              },
+              label: {
+                normal: {
+                  textStyle: {
+                    color: '#67717C',
+                    fontStyle: 'bolder'
+                  }
+                }
               }
             }
-          },
-          labelLine: {
-            normal: {
-              show: false
-            }
-          },
-          data: [
-            { value: 335, name: '直接访问' },
-            { value: 310, name: '邮件营销' },
-            { value: 234, name: '联盟广告' },
-            { value: 135, name: '视频广告' },
-            { value: 1548, name: '搜索引擎' }
           ]
         }
       ]
     };
+  }
+  pieselectchanged = () => {
+    console.log('pieselectchanged');
   }
   render() {
     return (
@@ -60,6 +137,7 @@ class PieCircle extends React.Component {
           option={this.getOption()}
           notMerge
           lazyUpdate
+          onEvents={{ pieselectchanged: this.pieselectchanged, click: (e) => { console.log(e); } }}
           onChartReady={this.onChartReadyCallback} />
       </div>
     );
