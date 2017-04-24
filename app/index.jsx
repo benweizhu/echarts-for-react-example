@@ -2,6 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import PhonePieChart from './components/PhonePieChart';
 import MobilePieChart from './components/MobilePieChart';
+import WorldMap from './components/WorldMap';
+import ChinaMap from './components/ChinaMap';
+
+require("echarts/map/js/world.js");
+require("echarts/map/js/china.js");
 
 class EchartsForReactExample extends React.Component {
   render() {
@@ -9,6 +14,8 @@ class EchartsForReactExample extends React.Component {
       <div>
         <PhonePieChart />
         <MobilePieChart />
+        <WorldMap />
+        <ChinaMap />
       </div>
     );
   }
