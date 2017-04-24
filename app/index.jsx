@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import PieCircle from './components/PieCircle';
+import PhonePieChart from './components/PhonePieChart';
 
 class EchartsForReactExample extends React.Component {
   render() {
     return (
       <div>
-        <PieCircle />
+        <PhonePieChart />
       </div>
     );
   }
