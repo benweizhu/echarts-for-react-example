@@ -3,6 +3,8 @@ import classNames from 'classnames/bind';
 import EchartsForReact from 'echarts-for-react';
 import styles from './WorldMap.scss';
 
+require("./china.js");
+
 const cx = classNames.bind(styles);
 
 class ChinaMap extends React.Component {
@@ -35,6 +37,7 @@ class ChinaMap extends React.Component {
           type: 'map',
           mapType: 'china',
           roam: false,
+          left: 100,
           label: {
             normal: {
               show: true
@@ -146,6 +149,7 @@ class ChinaMap extends React.Component {
         <EchartsForReact
           option={this.getOption()}
           notMerge
+          style = {{width: '500px', height: '500px'}}
           lazyUpdate />
       </div>
     );

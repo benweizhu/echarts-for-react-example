@@ -35,7 +35,7 @@ class WorldMap extends React.Component {
           name: 'World Population (2010)',
           type: 'map',
           mapType: 'world',
-          roam: true,
+          roam: false,
           itemStyle: {
             emphasis: { label: { show: true } }
           },

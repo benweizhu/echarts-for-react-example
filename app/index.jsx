@@ -6,7 +6,6 @@ import WorldMap from './components/WorldMap';
 import ChinaMap from './components/ChinaMap';
 
 require("echarts/map/js/world.js");
-require("echarts/map/js/china.js");
 
 class EchartsForReactExample extends React.Component {
   render() {
