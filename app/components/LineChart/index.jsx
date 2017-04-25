@@ -7,85 +7,72 @@ const cx = classNames.bind(styles);
 
 class LineChart extends React.Component {
 
-  getOptions = ()=> {
-    return {
-      color: ['#EF50AB', '#F3A10E'],
-      tooltip: {
-        trigger: 'item',
-        position: ["50%", "50%"]
-      },
-      legend: {
-        x: 'left',
-        padding: [10, 20, 0, 20],
-        data: [{ name: 'Tablet', icon: 'react' }, { name: 'PC', icon: 'react' }],
-        selected: {
-          'Tablet': true,
-          'PC': true
-        }
-      },
-      grid: {
-        left: '0',
-        right: '3%',
-        bottom: '3%',
-        top: '13%',
-        containLabel: true
-      },
-      tooltip: {
-        trigger: 'axis'
-      },
-      xAxis: {
-        type: 'category',
-        boundaryGap: false,
-        data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
-        axisLine: {
-          lineStyle: {
-            color: '#E4E6E9'
+  constructor(props) {
+    super(props);
+    this.state = {
+      options: {
+        color: this.props.color,
+        tooltip: {
+          trigger: 'axis'
+        },
+        grid: {
+          left: '0',
+          right: '3%',
+          bottom: '3%',
+          top: '13%',
+          containLabel: true
+        },
+        legend: {
+          x: 'left',
+          padding: [10, 20, 0, 20],
+          data: this.props.legendData
+        },
+        xAxis: {
+          type: 'category',
+          boundaryGap: false,
+          data: props.xAxisData,
+          axisLine: {
+            lineStyle: {
+              color: '#E4E6E9'
+            }
+          },
+          axisLabel: {
+            margin: 10,
+            textStyle: {
+              color: '#646E7B'
+            }
           }
         },
-        axisLabel: {
-          margin: 10,
-          textStyle: {
-            color: '#646E7B'
-          }
-        }
-      },
-      yAxis: {
-        splitLine: { //网格线
-          show: true,
-          lineStyle: {
-            color: ['#EAEDF2'],
-            type: 'dashed'
+        yAxis: {
+          splitLine: {
+            show: true,
+            lineStyle: {
+              color: ['#EAEDF2'],
+              type: 'dashed'
+            }
+          },
+          axisLine: {
+            lineStyle: {
+              color: '#E4E6E9'
+            }
+          },
+          axisLabel: {
+            margin: 10,
+            textStyle: {
+              color: '#646E7B'
+            }
           }
         },
-        axisLine: {
-          lineStyle: {
-            color: '#E4E6E9'
-          }
-        },
-        axisLabel: {
-          margin: 10,
-          textStyle: {
-            color: '#646E7B'
-          }
-        }
-      },
-      series: [{
-        name: 'Tablet',
-        type: 'line',
-        data: ['400', '380', '500', '630', '480', '1000', '100'],
-      }, {
-        name: 'PC',
-        type: 'line',
-        data: ['300', '350', '400', '380', '390', '410', '380'],
-      }]
-    };
-  };
+        series: this.props.series
+      }
+    }
+  }
 
   render() {
     return (
       <div className={cx('container')}>
         <EchartsForReact
-          option={this.getOptions()}
+          option={this.state.options}
           notMerge
           lazyUpdate
           onEvents={this.props.handleEvents}/>
@@ -93,5 +80,12 @@ class LineChart extends React.Component {
     );
   }
 }
+
+LineChart.propTypes = {
+  legendData: React.PropTypes.arrayOf(React.PropTypes.object),
+  color: React.PropTypes.arrayOf(React.PropTypes.string),
+  xAxisData: React.PropTypes.arrayOf(React.PropTypes.object).isRequired,
+  series: React.PropTypes.arrayOf(React.PropTypes.object).isRequired
+};
 
 export default LineChart;
