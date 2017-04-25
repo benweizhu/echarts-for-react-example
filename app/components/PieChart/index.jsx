@@ -41,7 +41,7 @@ class PieChart extends React.Component {
 
   render() {
     return (
-      <div className={cx('container')}>
+      <div className={cx('container', this.props.className)}>
         <EchartsForReact
           option={this.state.option}
           notMerge
@@ -55,7 +55,8 @@ class PieChart extends React.Component {
 PieChart.propTypes = {
   title: React.PropTypes.string.isRequired,
   data: React.PropTypes.arrayOf(React.PropTypes.object).isRequired,
-  handleEvents: React.PropTypes.object
+  handleEvents: React.PropTypes.object,
+  className: React.PropTypes.string
 };
 
 export default PieChart;

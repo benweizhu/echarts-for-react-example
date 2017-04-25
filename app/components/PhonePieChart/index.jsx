@@ -1,8 +1,18 @@
 import React from 'react';
 import PieChart from '../PieChart';
+import classNames from 'classnames/bind';
+import styles from './PhonePieChart.scss';
+
+const cx = classNames.bind(styles);
 
 class PhonePieChart extends React.Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      showBrandDetails: false
+    };
+  }
   getData = () => {
     return [
       {
@@ -110,10 +120,24 @@ class PhonePieChart extends React.Component {
     ];
   }
 
+  handleBrandClick = (e) => {
+    console.log(e.name);
+    this.setState({
+      showBrandDetails: !this.state.showBrandDetails
+    });
+  }
+
+  renderContent = () => {
+    if (this.state.showBrandDetails) {
+      return (<div className={cx('hidden', { show: this.state.showBrandDetails })}>show brand details</div>);
+    }
+    return (<PieChart className={cx({ hidden: this.state.showBrandDetails })} title="23,323" data={this.getData()} handleEvents={{ click: this.handleBrandClick }} />);
+  }
+
   render() {
     return (
       <div>
-        <PieChart title="23,323" data={this.getData()} handleEvents={{ click: (e) => { console.log(e); } }} />
+        {this.renderContent()}
       </div>
     );
   }
