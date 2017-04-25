@@ -14,7 +14,8 @@ class ChinaMap extends React.Component {
       tooltip: {
         trigger: 'item'
       },
-      visualMap: {
+      visualMap: [{
+        type: 'continuous',
         min: 0,
         max: 2500,
         left: 'left',
@@ -24,17 +25,9 @@ class ChinaMap extends React.Component {
         inRange: {
           color: ['lightskyblue', 'yellow', 'orangered']
         }
-      },
+      }],
       toolbox: {
-        show: true,
-        orient: 'vertical',
-        left: 'right',
-        top: 'center',
-        feature: {
-          dataView: { readOnly: false },
-          restore: {},
-          saveAsImage: {}
-        }
+        show: false
       },
       series: [
         {

@@ -18,15 +18,7 @@ class WorldMap extends React.Component {
         }
       },
       toolbox: {
-        show: true,
-        orient: 'vertical',
-        left: 'right',
-        top: 'center',
-        feature: {
-          dataView: { readOnly: false },
-          restore: {},
-          saveAsImage: {}
-        }
+        show: false
       },
       visualMap: {
         min: 0,

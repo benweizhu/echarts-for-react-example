@@ -17,7 +17,7 @@ class PhonePieChart extends React.Component {
     return [
       {
         value: 335,
-        name: 'Xiaomi',
+        name: 'Xiaomi\n34%\n19,002,222',
         itemStyle: {
           normal: {
             color: '#C7E38F'
@@ -27,7 +27,7 @@ class PhonePieChart extends React.Component {
           normal: {
             textStyle: {
               color: '#67717C',
-              fontStyle: 'bolder'
+              fontStyle: 'normal'
             }
           }
         }
