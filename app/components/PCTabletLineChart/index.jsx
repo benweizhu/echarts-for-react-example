@@ -5,22 +5,53 @@ import styles from './PCTabletLineChart.scss';
 
 const cx = classNames.bind(styles);
 
-class MobileLineChart extends React.Component {
+class PCTabletLineChart extends React.Component {
 
-  getAxisData = () => {
-    return ['周一', '周二', '周三', '周四', '周五', '周六', '周日'];
+  constructor(props) {
+    super(props);
+    const pcAxisData = [];
+    const pcSeriesData = [];
+    this.convertDataToAxisAndSeries(pcAxisData, pcSeriesData, props.pcData);
+
+    const tabletAxisData = [];
+    const tabletSeriesData = [];
+    this.convertDataToAxisAndSeries(tabletAxisData, tabletSeriesData, props.tabletData);
+
+    this.state = {
+      tablet: {
+        axisData: tabletAxisData,
+        seriesData: tabletSeriesData
+      },
+      pc: {
+        axisData: pcAxisData,
+        seriesData: pcSeriesData
+      }
+    };
+  }
+
+  convertDataToAxisAndSeries = (axisData, seriesData, data) => {
+    data && data.forEach((eachPoint)=> {
+      axisData.push(eachPoint.time);
+      seriesData.push(eachPoint.pv);
+    });
   };
 
   getSeries = ()=> {
     return [{
       name: 'Tablet',
       type: 'line',
-      data: ['400', '380', '500', '630', '480', '1000', '100']
+      data: this.state.tablet.seriesData
     }, {
       name: 'PC',
       type: 'line',
-      data: ['300', '350', '400', '380', '390', '410', '380']
+      data: this.state.pc.seriesData
     }];
+  };
+
+  getXAxisData = () => {
+    const tabletAxisData = this.state.tablet.axisData;
+    const pcAxisData = this.state.pc.axisData;
+	  return tabletAxisData.length > pcAxisData.length ? tabletAxisData : pcAxisData;
   };
 
   getLegendData = ()=> {
@@ -30,10 +61,15 @@ class MobileLineChart extends React.Component {
   render() {
     return (
       <div className={cx('container')}>
-        <LineChart legendData={this.getLegendData()} color={['#EF50AB', '#F3A10E']} xAxisData={this.getAxisData()} series={this.getSeries()}/>
+        <LineChart legendData={this.getLegendData()} color={['#EF50AB', '#F3A10E']} xAxisData={this.getXAxisData()} series={this.getSeries()}/>
       </div>
     );
   }
 }
 
-export default MobileLineChart;
+PCTabletLineChart.propTypes = {
+  pcData: React.PropTypes.arrayOf(React.PropTypes.object).isRequired,
+  tabletData: React.PropTypes.arrayOf(React.PropTypes.object).isRequired
+};
+
+export default PCTabletLineChart;

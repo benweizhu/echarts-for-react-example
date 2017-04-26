@@ -4,7 +4,7 @@ import PhonePieChart from './components/PhonePieChart';
 import MobilePieChart from './components/MobilePieChart';
 import WorldMap from './components/WorldMap';
 import ChinaMap from './components/ChinaMap';
-import PCTabletLineChart from './components/PCTabletLineChart';
+import PCTabletLineChartByYear from './components/LineChartExample/PCTabletLineChartByYear';
 
 require("echarts/map/js/world.js");
 
@@ -16,7 +16,7 @@ class EchartsForReactExample extends React.Component {
         <MobilePieChart />
         <WorldMap />
         <ChinaMap />
-        <PCTabletLineChart />
+        <PCTabletLineChartByYear />
       </div>
     );
   }

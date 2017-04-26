@@ -17,7 +17,7 @@ class LineChart extends React.Component {
         },
         grid: {
           left: '0',
-          right: '3%',
+          right: '3%',  
           bottom: '3%',
           top: '13%',
           containLabel: true
@@ -35,6 +35,9 @@ class LineChart extends React.Component {
             lineStyle: {
               color: '#E4E6E9'
             }
+          },
+          axisTick: {
+            show: false
           },
           axisLabel: {
             margin: 10,
@@ -55,6 +58,9 @@ class LineChart extends React.Component {
             lineStyle: {
               color: '#E4E6E9'
             }
+          },
+          axisTick: {
+            show: false
           },
           axisLabel: {
             margin: 10,
