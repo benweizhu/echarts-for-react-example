@@ -50,10 +50,10 @@ class LineChart extends React.Component {
             label: {
               formatter: function (params) {
                 if (props.byWeek) {
-                  const sevenDaysBefore = moment(params.value, 'YY/MM/DD').subtract(7, 'days').format('YY/MM/DD');
+                  const sevenDaysBefore = moment(params.value, 'DD/MM/YY').subtract(7, 'days').format('DD/MM/YY');
                   return `${sevenDaysBefore} - ${params.value}`;
                 } else if (props.bySixHours) {
-                  const sixHoursBefore = moment(params.value, 'YY/MM/DD HH:mm').subtract(6, 'hours').format('YY/MM/DD HH:mm');
+                  const sixHoursBefore = moment(params.value, 'DD/MM/YY HH:mm').subtract(6, 'hours').format('DD/MM/YY HH:mm');
                   return `${sixHoursBefore} - ${params.value}`;
                 } else {
                   return params.value;

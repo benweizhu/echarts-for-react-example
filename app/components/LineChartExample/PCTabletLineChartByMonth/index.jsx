@@ -1,101 +1,103 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import PCTabletLineChart from '../../PCTabletLineChart';
-import styles from './PCTabletLineChartByYear.scss';
+import styles from './PCTabletLineChartByMonth.scss';
 
 const cx = classNames.bind(styles);
 
-class PCTabletLineChartByYear extends React.Component {
+class PCTabletLineChartByMonth extends React.Component {
 
   getData = ()=> {
     return [
-      { time: '16/01/07', pv: 400 },
-      { time: '16/01/14', pv: 380 },
-      { time: '16/01/21', pv: 500 },
-      { time: '16/01/28', pv: 100 },
-      { time: '16/02/05', pv: 200 },
-      { time: '16/02/13', pv: 600 },
-      { time: '16/02/20', pv: 300 },
-      { time: '16/02/27', pv: 500 },
-      { time: '16/03/05', pv: 900 },
-      { time: '16/03/12', pv: 700 },
-      { time: '17/03/19', pv: 300 },
-      { time: '17/03/26', pv: 100 }
+      { time: '07/01/16', pv: 4000 },
+      { time: '14/01/16', pv: 3800 },
+      { time: '21/01/16', pv: 5000 },
+      { time: '28/01/16', pv: 1000 },
+      { time: '05/02/16', pv: 2000 },
+      { time: '13/02/16', pv: 6000 },
+      { time: '20/02/16', pv: 3000 },
+      { time: '27/02/16', pv: 5000 },
+      { time: '05/03/16', pv: 9000 },
+      { time: '12/03/16', pv: 7000 },
+      { time: '19/03/16', pv: 3000 },
+      { time: '26/03/16', pv: 1000 },
+      { time: '31/03/16', pv: 1000 }
     ];
   };
 
   getPCData = ()=> {
     return [
-      { time: '16/01/07', pv: 40 },
-      { time: '16/01/14', pv: 38 },
-      { time: '16/01/21', pv: 50 },
-      { time: '16/01/28', pv: 10 },
-      { time: '16/02/05', pv: 20 },
-      { time: '16/02/13', pv: 60 },
-      { time: '16/02/20', pv: 30 },
-      { time: '16/02/27', pv: 50 },
-      { time: '16/03/05', pv: 90 },
-      { time: '16/03/12', pv: 70 },
-      { time: '17/03/19', pv: 30 },
-      { time: '17/03/26', pv: 10 }
+      { time: '07/01/16', pv: 400 },
+      { time: '14/01/16', pv: 380 },
+      { time: '21/01/16', pv: 500 },
+      { time: '28/01/16', pv: 100 },
+      { time: '05/02/16', pv: 200 },
+      { time: '13/02/16', pv: 600 },
+      { time: '20/02/16', pv: 300 },
+      { time: '27/02/16', pv: 500 },
+      { time: '05/03/16', pv: 900 },
+      { time: '12/03/16', pv: 700 },
+      { time: '19/03/16', pv: 300 },
+      { time: '26/03/16', pv: 100 },
+      { time: '31/03/16', pv: 100 }
     ];
   };
 
   getMonthData = ()=> {
     return [
-      { time: '16/01', pv: 400 },
-      { time: '16/02', pv: 380 },
-      { time: '16/03', pv: 500 },
-      { time: '16/04', pv: 100 },
-      { time: '16/05', pv: 200 },
-      { time: '16/06', pv: 600 },
-      { time: '16/07', pv: 300 },
-      { time: '16/08', pv: 500 },
-      { time: '16/09', pv: 900 },
-      { time: '16/10', pv: 700 },
-      { time: '16/11', pv: 300 },
-      { time: '16/12', pv: 100 },
-      { time: '17/01', pv: 400 },
-      { time: '17/02', pv: 380 },
-      { time: '17/03', pv: 500 },
-      { time: '17/04', pv: 100 },
-      { time: '17/05', pv: 200 },
-      { time: '17/06', pv: 600 },
-      { time: '17/07', pv: 300 },
-      { time: '17/08', pv: 500 },
-      { time: '17/09', pv: 900 },
-      { time: '17/10', pv: 700 },
-      { time: '17/11', pv: 300 },
-      { time: '17/12', pv: 100 }
+      { time: '01/16', pv: 40000 },
+      { time: '02/16', pv: 38000 },
+      { time: '03/16', pv: 50000 },
+      { time: '04/16', pv: 10000 },
+      { time: '05/16', pv: 20000 },
+      { time: '06/16', pv: 60000 },
+      { time: '07/16', pv: 30000 },
+      { time: '08/16', pv: 50000 },
+      { time: '09/16', pv: 90000 },
+      { time: '10/16', pv: 70000 },
+      { time: '11/16', pv: 30000 },
+      { time: '12/16', pv: 10000 },
+      { time: '01/17', pv: 40000 },
+      { time: '02/17', pv: 38000 },
+      { time: '03/17', pv: 50000 },
+      { time: '04/17', pv: 10000 },
+      { time: '05/17', pv: 20000 },
+      { time: '06/17', pv: 60000 },
+      { time: '07/17', pv: 30000 },
+      { time: '08/17', pv: 50000 },
+      { time: '09/17', pv: 90000 },
+      { time: '10/17', pv: 70000 },
+      { time: '11/17', pv: 30000 },
+      { time: '12/17', pv: 10000 }
     ];
   };
 
   getMonthPCData = ()=> {
     return [
-      { time: '16/01', pv: 40 },
-      { time: '16/02', pv: 38 },
-      { time: '16/03', pv: 50 },
-      { time: '16/04', pv: 10 },
-      { time: '16/05', pv: 20 },
-      { time: '16/06', pv: 60 },
-      { time: '16/07', pv: 30 },
-      { time: '16/08', pv: 50 },
-      { time: '16/09', pv: 90 },
-      { time: '16/10', pv: 70 },
-      { time: '16/11', pv: 30 },
-      { time: '16/12', pv: 10 },
-      { time: '17/01', pv: 40 },
-      { time: '17/02', pv: 38 },
-      { time: '17/03', pv: 50 },
-      { time: '17/04', pv: 10 },
-      { time: '17/05', pv: 20 },
-      { time: '17/06', pv: 60 },
-      { time: '17/07', pv: 30 },
-      { time: '17/08', pv: 50 },
-      { time: '17/09', pv: 90 },
-      { time: '17/10', pv: 70 },
-      { time: '17/11', pv: 30 },
-      { time: '17/12', pv: 10 }
+      { time: '01/16', pv: 4000 },
+      { time: '02/16', pv: 3800 },
+      { time: '03/16', pv: 5000 },
+      { time: '04/16', pv: 1000 },
+      { time: '05/16', pv: 2000 },
+      { time: '06/16', pv: 6000 },
+      { time: '07/16', pv: 3000 },
+      { time: '08/16', pv: 5000 },
+      { time: '09/16', pv: 9000 },
+      { time: '10/16', pv: 7000 },
+      { time: '11/16', pv: 3000 },
+      { time: '12/16', pv: 1000 },
+      { time: '01/17', pv: 4000 },
+      { time: '02/17', pv: 3800 },
+      { time: '03/17', pv: 5000 },
+      { time: '04/17', pv: 1000 },
+      { time: '05/17', pv: 2000 },
+      { time: '06/17', pv: 6000 },
+      { time: '07/17', pv: 3000 },
+      { time: '08/17', pv: 5000 },
+      { time: '09/17', pv: 9000 },
+      { time: '10/17', pv: 7000 },
+      { time: '11/17', pv: 3000 },
+      { time: '12/17', pv: 1000 }
     ];
   };
 
@@ -109,4 +111,4 @@ class PCTabletLineChartByYear extends React.Component {
   }
 }
 
-export default PCTabletLineChartByYear;
+export default PCTabletLineChartByMonth;
