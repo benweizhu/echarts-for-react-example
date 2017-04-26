@@ -8,6 +8,7 @@ import PCTabletLineChartByYear from './components/LineChartExample/PCTabletLineC
 import PCTabletLineChartByMonth from './components/LineChartExample/PCTabletLineChartByMonth';
 import PCTabletLineChartByDay from './components/LineChartExample/PCTabletLineChartByDay';
 import PCTabletLineChartByHour from './components/LineChartExample/PCTabletLineChartByHour';
+import MobileLineChartByYear from './components/LineChartExample/MobileLineChartByYear';
 
 require("echarts/map/js/world.js");
 
@@ -23,6 +24,7 @@ class EchartsForReactExample extends React.Component {
         <PCTabletLineChartByMonth />
         <PCTabletLineChartByDay />
         <PCTabletLineChartByHour />
+        <MobileLineChartByYear />
       </div>
     );
   }

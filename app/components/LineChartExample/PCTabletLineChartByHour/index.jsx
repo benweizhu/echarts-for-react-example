@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames/bind';
-import PCTabletLineChart from '../../PCTabletLineChart';
+import PVLineChart from '../../PVLineChart';
 import styles from './PCTabletLineChartByHour.scss';
 
 const cx = classNames.bind(styles);
@@ -43,11 +43,26 @@ class PCTabletLineChartByDay extends React.Component {
     ];
   };
 
+  getPvDataGroup = ()=> {
+    return [
+      {
+        name: 'Tablet',
+        color: '#EF50AB',
+        data: this.getData()
+      },
+      {
+        name: 'PC',
+        color: '#F3A10E',
+        data: this.getPCData()
+      }
+    ]
+  };
+
 
   render() {
     return (
       <div className={cx('container')}>
-        <PCTabletLineChart pcData={this.getPCData()} tabletData={this.getData()}/>
+        <PVLineChart pvDataGroup={this.getPvDataGroup()}/>
       </div>
     );
   }

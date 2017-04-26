@@ -1,11 +1,11 @@
 import React from 'react';
 import classNames from 'classnames/bind';
-import styles from './PCTabletLineChartByYear.scss';
+import styles from './MobileLineChartByYear.scss';
 import PVLineChart from '../../PVLineChart';
 
 const cx = classNames.bind(styles);
 
-class PCTabletLineChartByYear extends React.Component {
+class MobileLineChartByYear extends React.Component {
 
   getData = ()=> {
     return [
@@ -68,13 +68,13 @@ class PCTabletLineChartByYear extends React.Component {
   getPvDataGroup = ()=> {
     return [
       {
-        name: 'Tablet',
-        color: '#EF50AB',
+        name: 'Total',
+        color: '#0074FB',
         data: this.getData()
       },
       {
-        name: 'PC',
-        color: '#F3A10E',
+        name: 'Mobile',
+        color: '#88EFDF',
         data: this.getPCData()
       }
     ]
@@ -90,4 +90,4 @@ class PCTabletLineChartByYear extends React.Component {
   }
 }
 
-export default PCTabletLineChartByYear;
+export default MobileLineChartByYear;

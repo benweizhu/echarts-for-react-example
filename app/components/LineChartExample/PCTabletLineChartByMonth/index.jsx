@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames/bind';
-import PCTabletLineChart from '../../PCTabletLineChart';
 import styles from './PCTabletLineChartByMonth.scss';
+import PVLineChart from '../../PVLineChart';
 
 const cx = classNames.bind(styles);
 
@@ -101,11 +101,41 @@ class PCTabletLineChartByMonth extends React.Component {
     ];
   };
 
+  getPvDataGroup = ()=> {
+    return [
+      {
+        name: 'Tablet',
+        color: '#EF50AB',
+        data: this.getData()
+      },
+      {
+        name: 'PC',
+        color: '#F3A10E',
+        data: this.getPCData()
+      }
+    ]
+  };
+
+  getMonthPvDataGroup = ()=> {
+    return [
+      {
+        name: 'Tablet',
+        color: '#EF50AB',
+        data: this.getMonthData()
+      },
+      {
+        name: 'PC',
+        color: '#F3A10E',
+        data: this.getMonthPCData()
+      }
+    ]
+  };
+
   render() {
     return (
       <div className={cx('container')}>
-        <PCTabletLineChart byWeek pcData={this.getPCData()} tabletData={this.getData()}/>
-        <PCTabletLineChart pcData={this.getMonthPCData()} tabletData={this.getMonthData()}/>
+        <PVLineChart byWeek pvDataGroup={this.getPvDataGroup()}/>
+        <PVLineChart pvDataGroup={this.getMonthPvDataGroup()}/>
       </div>
     );
   }

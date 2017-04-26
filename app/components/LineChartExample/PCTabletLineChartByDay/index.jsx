@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames/bind';
-import PCTabletLineChart from '../../PCTabletLineChart';
+import PVLineChart from '../../PVLineChart';
 import styles from './PCTabletLineChartByDay.scss';
 
 const cx = classNames.bind(styles);
@@ -107,17 +107,47 @@ class PCTabletLineChartByDay extends React.Component {
       { time: '26/01/16', pv: 700 },
       { time: '27/01/16', pv: 300 },
     ];
-  }
+  };
 
+  getPvDataGroup = ()=> {
+    return [
+      {
+        name: 'Tablet',
+        color: '#EF50AB',
+        data: this.getData()
+      },
+      {
+        name: 'PC',
+        color: '#F3A10E',
+        data: this.getPCData()
+      }
+    ]
+  };
+
+  getSixHoursPvDataGroup = ()=> {
+    return [
+      {
+        name: 'Tablet',
+        color: '#EF50AB',
+        data: this.getSexHourData()
+      },
+      {
+        name: 'PC',
+        color: '#F3A10E',
+        data: this.getSixHourPCData()
+      }
+    ]
+  };
 
   render() {
     return (
       <div className={cx('container')}>
-        <PCTabletLineChart bySixHours pcData={this.getSixHourPCData()} tabletData={this.getSexHourData()}/>
-        <PCTabletLineChart pcData={this.getPCData()} tabletData={this.getData()}/>
+        <PVLineChart bySixHours pvDataGroup={this.getPvDataGroup()}/>
+        <PVLineChart pvDataGroup={this.getSixHoursPvDataGroup()}/>
       </div>
     );
   }
+
 }
 
 export default PCTabletLineChartByDay;
