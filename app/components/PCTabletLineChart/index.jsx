@@ -51,7 +51,7 @@ class PCTabletLineChart extends React.Component {
   getXAxisData = () => {
     const tabletAxisData = this.state.tablet.axisData;
     const pcAxisData = this.state.pc.axisData;
-	  return tabletAxisData.length > pcAxisData.length ? tabletAxisData : pcAxisData;
+    return tabletAxisData.length > pcAxisData.length ? tabletAxisData : pcAxisData;
   };
 
   getLegendData = ()=> {
@@ -61,7 +61,7 @@ class PCTabletLineChart extends React.Component {
   render() {
     return (
       <div className={cx('container')}>
-        <LineChart legendData={this.getLegendData()} color={['#EF50AB', '#F3A10E']} xAxisData={this.getXAxisData()} series={this.getSeries()}/>
+        <LineChart {...this.props} legendData={this.getLegendData()} color={['#EF50AB', '#F3A10E']} xAxisData={this.getXAxisData()} series={this.getSeries()}/>
       </div>
     );
   }

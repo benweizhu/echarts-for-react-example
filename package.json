@@ -34,6 +34,7 @@
     "classnames": "^2.2.5",
     "echarts": "^3.5.3",
     "echarts-for-react": "^1.2.1",
+    "moment": "^2.18.1",
     "prop-types": "^15.5.4",
     "react": "^15.5.2",
     "react-dom": "^15.5.2",

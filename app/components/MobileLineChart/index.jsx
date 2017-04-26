@@ -30,7 +30,7 @@ class MobileLineChart extends React.Component {
   render() {
     return (
       <div className={cx('container')}>
-        <LineChart legendData={this.getLegendData()} color={['#0074FB', '#88EFDF']} xAxisData={this.getAxisData()} series={this.getSeries()}/>
+        <LineChart {...this.props} legendData={this.getLegendData()} color={['#0074FB', '#88EFDF']} xAxisData={this.getAxisData()} series={this.getSeries()}/>
       </div>
     );
   }
