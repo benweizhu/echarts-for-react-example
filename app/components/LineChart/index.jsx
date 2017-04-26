@@ -17,7 +17,7 @@ class LineChart extends React.Component {
           trigger: 'axis'
         },
         grid: {
-          left: '0',
+          left: '1%',
           right: '3%',
           bottom: '3%',
           top: '13%',
@@ -53,8 +53,8 @@ class LineChart extends React.Component {
                   const sevenDaysBefore = moment(params.value, 'YY/MM/DD').subtract(7, 'days').format('YY/MM/DD');
                   return `${sevenDaysBefore} - ${params.value}`;
                 } else if (props.bySixHours) {
-                  const sevenDaysBefore = moment(params.value, 'YY/MM/DD').subtract(7, 'days').format('YY/MM/DD');
-                  return `${sevenDaysBefore} - ${params.value}`;
+                  const sixHoursBefore = moment(params.value, 'YY/MM/DD HH:mm').subtract(6, 'hours').format('YY/MM/DD HH:mm');
+                  return `${sixHoursBefore} - ${params.value}`;
                 } else {
                   return params.value;
                 }

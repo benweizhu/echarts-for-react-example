@@ -6,6 +6,7 @@ import WorldMap from './components/WorldMap';
 import ChinaMap from './components/ChinaMap';
 import PCTabletLineChartByYear from './components/LineChartExample/PCTabletLineChartByYear';
 import PCTabletLineChartByMonth from './components/LineChartExample/PCTabletLineChartByMonth';
+import PCTabletLineChartByDay from './components/LineChartExample/PCTabletLineChartByDay';
 
 require("echarts/map/js/world.js");
 
@@ -19,6 +20,7 @@ class EchartsForReactExample extends React.Component {
         <ChinaMap />
         <PCTabletLineChartByYear />
         <PCTabletLineChartByMonth />
+        <PCTabletLineChartByDay />
       </div>
     );
   }
