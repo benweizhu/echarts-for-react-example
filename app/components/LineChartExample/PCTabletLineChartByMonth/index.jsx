@@ -20,7 +20,7 @@ class PCTabletLineChartByYear extends React.Component {
       { time: '16/03/05', pv: 900 },
       { time: '16/03/12', pv: 700 },
       { time: '17/03/19', pv: 300 },
-      { time: '17/03/26', pv: 100 },
+      { time: '17/03/26', pv: 100 }
     ];
   };
 
@@ -37,7 +37,53 @@ class PCTabletLineChartByYear extends React.Component {
       { time: '16/03/05', pv: 90 },
       { time: '16/03/12', pv: 70 },
       { time: '17/03/19', pv: 30 },
-      { time: '17/03/26', pv: 10 },
+      { time: '17/03/26', pv: 10 }
+    ];
+  };
+
+  getMonthData = ()=> {
+    return [
+      { time: '16/01', pv: 400 },
+      { time: '16/02', pv: 380 },
+      { time: '16/03', pv: 500 },
+      { time: '16/04', pv: 100 },
+      { time: '16/05', pv: 200 },
+      { time: '16/06', pv: 600 },
+      { time: '16/07', pv: 300 },
+      { time: '16/08', pv: 500 },
+      { time: '16/09', pv: 900 },
+      { time: '16/10', pv: 700 },
+      { time: '16/11', pv: 300 },
+      { time: '16/12', pv: 100 }
+    ];
+  };
+
+  getMonthPCData = ()=> {
+    return [
+      { time: '16/01', pv: 40 },
+      { time: '16/02', pv: 38 },
+      { time: '16/03', pv: 50 },
+      { time: '16/04', pv: 10 },
+      { time: '16/05', pv: 20 },
+      { time: '16/06', pv: 60 },
+      { time: '16/07', pv: 30 },
+      { time: '16/08', pv: 50 },
+      { time: '16/09', pv: 90 },
+      { time: '16/10', pv: 70 },
+      { time: '16/11', pv: 30 },
+      { time: '16/12', pv: 10 },
+      { time: '17/01', pv: 40 },
+      { time: '17/02', pv: 38 },
+      { time: '17/03', pv: 50 },
+      { time: '17/04', pv: 10 },
+      { time: '17/05', pv: 20 },
+      { time: '17/06', pv: 60 },
+      { time: '17/07', pv: 30 },
+      { time: '17/08', pv: 50 },
+      { time: '17/09', pv: 90 },
+      { time: '17/10', pv: 70 },
+      { time: '17/11', pv: 30 },
+      { time: '17/12', pv: 10 }
     ];
   };
 
@@ -45,6 +91,7 @@ class PCTabletLineChartByYear extends React.Component {
     return (
       <div className={cx('container')}>
         <PCTabletLineChart byWeek pcData={this.getPCData()} tabletData={this.getData()}/>
+        <PCTabletLineChart pcData={this.getMonthPCData()} tabletData={this.getMonthData()}/>
       </div>
     );
   }
