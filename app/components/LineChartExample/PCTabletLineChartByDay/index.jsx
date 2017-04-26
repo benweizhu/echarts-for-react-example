@@ -43,7 +43,15 @@ class PCTabletLineChartByDay extends React.Component {
       { time: '16/01/09 0:00', pv: 90 },
       { time: '16/01/09 6:00', pv: 70 },
       { time: '16/01/09 12:00', pv: 30 },
-      { time: '16/01/09 18:00', pv: 10 }
+      { time: '16/01/09 18:00', pv: 10 },
+      { time: '16/01/10 0:00', pv: 20 },
+      { time: '16/01/10 6:00', pv: 60 },
+      { time: '16/01/10 12:00', pv: 30 },
+      { time: '16/01/10 18:00', pv: 50 },
+      { time: '16/01/11 0:00', pv: 20 },
+      { time: '16/01/11 6:00', pv: 60 },
+      { time: '16/01/11 12:00', pv: 30 },
+      { time: '16/01/11 18:00', pv: 50 },
     ];
   };
 
@@ -73,7 +81,7 @@ class PCTabletLineChartByDay extends React.Component {
     ];
   };
 
-  getData =()=>{
+  getData = ()=> {
     return [
       { time: '16/01/07', pv: 380 },
       { time: '16/01/08', pv: 500 },
@@ -87,8 +95,7 @@ class PCTabletLineChartByDay extends React.Component {
       { time: '16/01/16', pv: 300 },
       { time: '16/01/17', pv: 100 },
       { time: '16/01/18', pv: 100 },
-      { time: '16/01/19', pv: 380 },
-      { time: '16/01/20', pv: 500 },
+      { time: '16/01/19', pv: 100 },
       { time: '16/01/20', pv: 100 },
       { time: '16/01/21', pv: 200 },
       { time: '16/01/22', pv: 600 },

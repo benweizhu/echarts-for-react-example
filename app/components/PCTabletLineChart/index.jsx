@@ -40,10 +40,12 @@ class PCTabletLineChart extends React.Component {
     return [{
       name: 'Tablet',
       type: 'line',
+      symbol: 'none',
       data: this.state.tablet.seriesData
     }, {
       name: 'PC',
       type: 'line',
+      symbol: 'none',
       data: this.state.pc.seriesData
     }];
   };

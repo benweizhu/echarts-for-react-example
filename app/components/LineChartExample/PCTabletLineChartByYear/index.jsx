@@ -32,6 +32,9 @@ class PCTabletLineChartByYear extends React.Component {
 
   getPCData = ()=> {
     return [
+      { time: '15/12', pv: 90 },
+      { time: '16/01', pv: 70 },
+      { time: '16/02', pv: 60 },
       { time: '16/03', pv: 40 },
       { time: '16/04', pv: 38 },
       { time: '16/05', pv: 50 },

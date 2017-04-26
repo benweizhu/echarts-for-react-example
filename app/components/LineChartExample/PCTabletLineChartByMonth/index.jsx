@@ -54,7 +54,19 @@ class PCTabletLineChartByYear extends React.Component {
       { time: '16/09', pv: 900 },
       { time: '16/10', pv: 700 },
       { time: '16/11', pv: 300 },
-      { time: '16/12', pv: 100 }
+      { time: '16/12', pv: 100 },
+      { time: '17/01', pv: 400 },
+      { time: '17/02', pv: 380 },
+      { time: '17/03', pv: 500 },
+      { time: '17/04', pv: 100 },
+      { time: '17/05', pv: 200 },
+      { time: '17/06', pv: 600 },
+      { time: '17/07', pv: 300 },
+      { time: '17/08', pv: 500 },
+      { time: '17/09', pv: 900 },
+      { time: '17/10', pv: 700 },
+      { time: '17/11', pv: 300 },
+      { time: '17/12', pv: 100 }
     ];
   };
 

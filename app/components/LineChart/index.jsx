@@ -18,9 +18,9 @@ class LineChart extends React.Component {
         },
         grid: {
           left: '1%',
-          right: '3%',
-          bottom: '3%',
-          top: '13%',
+          // right: '10%',
+          // bottom: '3%',
+          // top: '13%',
           containLabel: true
         },
         legend: {
