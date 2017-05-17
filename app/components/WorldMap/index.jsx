@@ -2,6 +2,8 @@ import React from 'react';
 import classNames from 'classnames/bind';
 import EchartsForReact from 'echarts-for-react';
 import styles from './WorldMap.scss';
+import zrColor from 'zrender/lib/tool/color';
+var linearMap = require('echarts/lib/util/number').linearMap;
 
 const cx = classNames.bind(styles);
 
@@ -224,12 +226,21 @@ class WorldMap extends React.Component {
   }
 
   render() {
+    const parsedVisual = [[135, 206, 250, 1], [255, 255, 0, 1], [255, 69, 0, 1]];
+    const dataExtent = [0, 1000000];
+    const normalized = linearMap(1359821.465, dataExtent, [0, 1], true);
+    console.log(normalized);
+    console.log(zrColor.stringify(
+      zrColor.fastMapToColor(normalized, parsedVisual),
+      'rgba'
+    ));
+
     return (
       <div className={cx('container')}>
         <EchartsForReact
           option={this.getOption()}
           notMerge
-          lazyUpdate />
+          lazyUpdate/>
       </div>
     );
   }
